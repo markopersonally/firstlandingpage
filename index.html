@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency Web</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/581a9bc069.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="boxPopup">
+        <div class="popupSearch">
+            <div class="popupHeading">
+                <h2 class="fontXXLDark">Trello PopupSearch</h2><button class="closeButton">&times;</button>
+            </div>
+            <div class="popupBody">
+                <div class="popupBoxCities">
+                    <h5 class="popupTittle">Flight time:</br></h5>
+                    <p id="cityFrom">From:</br></p>
+                    <p id="cityTo">To:</br> </p>
+                    <p id="flyTime">Hours:</br> </p>
+                </div>
+                <div class="popupBoxDates">
+                    <h5 class="popupTittle">Date:</br></h5>
+                    <p id="dateFrom">From:</br></p>
+                    <p id="dateTo">To:</br></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlayPopup"></div>
+    <div class="overlayMenHamburger" style="display: none;">
+        <ul class="navMobilePanel">
+            <li class="navMobileLink"><a class="navMobileText" href="#review">Review</a></li>
+            <li class="navMobileLink"><a class="navMobileText" href="#tips">Tips</a></li>
+            <li class="navMobileLink"><a class="navMobileText" href="#alerts">Alerts</a></li>
+            <li class="navMobileLink"><a class="navMobileText" href="#blog">Blog</a></li>
+        </ul>
+    </div>
+    <header class="container">
+        <div class="navigationPanel">
+            <div class="logoPanel">
+                <img class="logoImg" src="https://i.pinimg.com/originals/f4/ca/2d/f4ca2d2b8700b8cc59b69a10d28e14cf.jpg"
+                    alt="pageLogo">
+                <span class="logoText">Treloo</span>
+            </div>
+            <div class="navigation">
+                <nav class="mainNavigation">
+                    <ul class="navPanel">
+                        <li class="navLink"><a class="navText" href="#review">Review</a></li>
+                        <li class="navLink"><a class="navText" href="#tips">Tips</a></li>
+                        <li class="navLink"><a class="navText" href="#alerts">Alerts</a></li>
+                        <li class="navLink"><a class="navText" href="#blog">Blog</a></li>
+                    </ul>
+                </nav>
+                <button class="blogBtn">Blog</button>
+            </div>
+            <button class="menHamburger"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+    <main>
+        <section class="container sectionHero">
+            <img class="heroImg"
+                src="https://www.gannett-cdn.com/-mm-/9e1f6e2ee20f44aa1f3be4f71e9f3e52b6ae2c7e/c=0-110-2121-1303/local/-/media/2022/05/06/USATODAY/usatsports/gettyimages-1303030943.jpg?width=2121&height=1193&fit=crop&format=pjpg&auto=webp"
+                alt="main picture" />
+            <div class="heroShadow"></div>
+            <div class="heroText">
+                <h1 class="heroTittle">
+                    Discover Your Life,Travel<br> Where You Want
+                </h1>
+                <h4>Would you explore paradise in the world, let's find the best destination in world with us.</h4>
+            </div>
+        </section>
+        <section class="container sectionSearch">
+            <div class="search">
+                <div class="containerTabs">
+                    <button class="buttonsTab">
+                        <i class="fas fa-plane"></i>
+                        <p class="paragrafTab">Flight</p>
+                    </button>
+                    <button class="buttonsTab">
+                        <i class="fas fa-hotel"></i>
+                        <p class="paragrafTab">Hotel</p>
+                    </button>
+                </div>
+                <div class="boxSerchElements">
+                    <div class="rowSearchDetails">
+                        <div class="boxSearch">
+                            <div class="boxSearchDetails">
+                                <div class="boxSearchText">
+                                    <h5 class="upperSearchText">Living from</h5>
+                                    <select id="selectCityFrom" class="boxSelect">
+                                        <option value="" disabled selected>--please choose a country--</option>
+                                        <option value="portugal">Portugal</option>
+                                        <option value="italy">Italy</option>
+                                        <option value="finland">Finland</option>
+                                    </select>
+                                    <p id="errorSelectCityFrom" class="searchError">Complete this place!</p>
+                                </div>
+                                <div class="boxSearchIcon">
+                                    <i class="fas fa-plane"></i>
+                                </div>
+                                <div class="boxSearchText">
+                                    <h5 class="upperSearchText">Going to</h5>
+                                    <select id="selectCityTo" class="boxSelect">
+                                        <option value="" disabled selected>--please choose a country--</option>
+                                        <option value="portugal">Portugal</option>
+                                        <option value="italy">Italy</option>
+                                        <option value="finland">Finland</option>
+                                    </select>
+                                    <p id="errorSelectCityTo" class="searchError">Complete this place!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="boxSearch">
+                            <div class="boxSearchDetails">
+                                <div class="boxSearchText">
+                                    <h5 class="upperSearchText">Leave<i class="fas fa-plane"></i></h5>
+                                    <input class="boxInput" id="inputDateFrom" type="date">
+                                    <p id="errorInputDateFrom" class="searchError">Complete this place!</p>
+                                </div>
+                                <div class="boxSearchIcon">
+                                    <i class="fas fa-calendar"></i>
+                                </div>
+                                <div class="boxSearchText">
+                                    <h5 class="upperSearchText">Return <i class="rotate fas fa-plane"></i></h5>
+                                    <input class="boxInput" id="inputDateTo" type="date">
+                                    <p id="errorInputDateTo" class="searchError">Complete this place!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="buttonSearch"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </section>
+        <section class="container sectionOffers">
+            <div class="offers">
+                <h2 class="offersText fontXXLDark">Section Upcoming Offers</h2>
+                <div class="containerTabsOffers">
+                    <div class="boxTabsOffers">
+                        <a class="offerLink" href="#">Team</a>
+                        <a class="offerLink" href="#">Couple</a>
+                        <a class="offerLink" href="#">Family</a>
+                    </div>
+                </div>
+                <div class="boxContainerCards">
+                    <div class="boxCard">
+                        <div class="boxTopCard">
+                            <img class="picutre"
+                                src="https://i.nocimg.pl/d9/389/146-wakacje-nad-morzem-zobacz-gdzie.jpg"
+                                alt="first picutre in card">
+                            <p class="rightTextCard">14 FEB 2022</p>
+                        </div>
+                        <div class="boxDownCard">
+                            <h4 class="dayTextCard"><span class="colorTextCard">Relax</span> 3 days, 3 nights</h4>
+                            <h5 class="cityTextCard">Sea</h5>
+                            <div class="boxPriceCard">
+                                <p class="priceTextCard">700$ <span class="priceColorCard">/Person</span></p>
+                                <button class="priceBtn">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boxCard">
+                        <div class="boxTopCard">
+                            <img class="picutre"
+                                src="https://triverna.pl/blog/wp-content/uploads/2020/08/mazury-jezioro.jpeg"
+                                alt="second picture in card">
+                            <p class="rightTextCard">19 JUN 2022</p>
+                        </div>
+                        <div class="boxDownCard">
+                            <h4 class="dayTextCard"><span class="colorTextCard">Adventure</span> 3 days, 3 nights</h4>
+                            <h5 class="cityTextCard">Masuria</h5>
+                            <div class="boxPriceCard">
+                                <p class="priceTextCard">300$ <span class="priceColorCard">/Person</span></p>
+                                <button class="priceBtn">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boxCard">
+                        <div class="boxTopCard">
+                            <img class="picutre"
+                                src="https://ocdn.eu/pulscms-transforms/1/Bimk9kpTURBXy9kNTJiNDBmOWNjZjg4NTliZDAwNDAwMTFkYTMzNTlmMy5qcGeTlQPNBFkAzRaOzQywkwXNBLDNAqSTCaY1NjViYWYG3gABoTAB/jesien-na-podhalu.jpg"
+                                alt="trid picture in card">
+                            <p class="rightTextCard">22 DEC 2022</p>
+                        </div>
+                        <div class="boxDownCard">
+                            <h4 class="dayTextCard"><span class="colorTextCard">Relax</span> 3 days, 3 nights</h4>
+                            <h5 class="cityTextCard">Mountain</h5>
+                            <div class="boxPriceCard">
+                                <p class="priceTextCard">500$ <span class="priceColorCard">/Person</span></p>
+                                <button class="priceBtn">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container sectionTravel">
+            <div class="travel">
+                <div class="boxTravelImg">
+                    <img class="boxTravelPicture"
+                        src="https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Nnx8fGVufDB8fHx8&w=1000&q=80"
+                        alt="Italy">
+                    <div class="boxTravelStyle boxTravelText1">
+                        <h5 class="boxTextUp">300+</h5>
+                        <h4 class="boxTextDown">Destinations</h4>
+                    </div>
+                    <div class="boxTravelStyle boxTravelText2">
+                        <h5 class="boxTextUp">5000+</h5>
+                        <h4 class="boxTextDown">Tourists</h4>
+                    </div>
+                    <div class="boxTravelStyle boxTravelText3">
+                        <h5 class="boxTextUp">150+</h5>
+                        <h4 class="boxTextDown">Hotels</h4>
+                    </div>
+                </div>
+                <div class="containerTravelText">
+                    <h2 class="fontXXLDark">Travel Any Corner of <br>The World With Us</h2>
+                    <p class="travelTextUpper">Would you explore nature paradise in the world,
+                        let's find <br>the best destination in world with us. Would you explore<br>
+                        nature paradise in the world, let's find the best destiation<br>
+                        in world with us. Would you explore nature paradise in the<br> world, let's find the best
+                        destination in world with us.</p>
+                    <p class="travelTextDown">Would you explore nature paradise in the world, let's find <br>the best
+                        destination
+                        in world with us.
+                    </p>
+                    <button class="buttonTravelText">Contact Us</button>
+                </div>
+            </div>
+        </section>
+        <section class="container sectionDestination">
+            <div class="destination">
+                <h2 class="fontXXLDark">Recommend Destination</h2>
+                <div class="containerTabsDestination">
+                    <div class="boxTabsDestination">
+                        <a class="destinationLink" href="#">Popular</a>
+                        <a class="destinationLink" href="#">Adventure</a>
+                        <a class="destinationLink" href="#">Beath</a>
+                    </div>
+                </div>
+                <div class="boxCardsDestination">
+                    <div class="boxDestinationCard">
+                        <div class="boxTopCard">
+                            <img class="picutreDestination"
+                                src="https://www.readyforboarding.pl/wp-content/uploads/2017/01/algarve-portugalia-28-201604-readyforboarding_pl.jpg"
+                                alt="samochód">
+                            <div class="rateCard">⭐️4.8</div>
+                        </div>
+                        <div class="boxDownCard">
+                            <h5 class="country">Portugal</h5>
+                            <h4 class="city">📌São Martinho do Porto</h4>
+                        </div>
+                    </div>
+                    <div class="boxDestinationCard">
+                        <div class="boxTopCard">
+                            <img class="picutreDestination"
+                                src="https://apartamentyzakopane.pl/blog/wp-content/uploads/2020/10/20120830_AB3_9443.jpg"
+                                alt="samochód">
+                            <div class="rateCard">⭐️4.2</div>
+                        </div>
+                        <div class="boxDownCard">
+                            <h5 class="country">Slovakia</h5>
+                            <h4 class="city">📌Pilsko</h4>
+                        </div>
+                    </div>
+                    <div class="boxDestinationCard">
+                        <div class="boxTopCard">
+                            <img class="picutreDestination"
+                                src="https://prezentokracja.pl/media/catalog/product/optimized/a/2/a23d0c9aaae2f9a98f4b01d6cda6af24/weekend-po-zaglami-mazury.jpg"
+                                alt="samochód">
+                            <div class="rateCard">⭐️3.8</div>
+                        </div>
+                        <div class="boxDownCard">
+                            <h5 class="country">Poland</h5>
+                            <h4 class="city">📌Mikołajki</h4>
+                        </div>
+                    </div>
+                    <div class="boxDestinationCard">
+                        <div class="boxTopCard">
+                            <img class="picutreDestination"
+                                src="https://regionfakty.pl/wp-content/uploads/2020/11/tansze-bilety-na-wakacje.jpg"
+                                alt="samochód">
+                            <div class="rateCard">⭐️4.6</div>
+                        </div>
+                        <div class="boxDownCard">
+                            <h5 class="country">Greece</h5>
+                            <h4 class="city">📌Paralia Fakistra</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container sectionExpertise">
+            <div class="expertise">
+                <div class="boxExpertiseElements">
+                    <div class="boxExpertiseCard">
+                        <p class="textExpertiseCard">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
+                            voluptas cupiditate accusantium animi quia quibusdam a fuga ipsam velit eum.</p>
+                        <h4 class="authorExpertiseText">-Vand D</h4>
+                        <h5 class="logoExpertiseText">Happy Trello</h5>
+                        <div class="boxExpertisePicture">
+                            <img class="expertisePicture"
+                                src="https://www.rd.com/wp-content/uploads/2021/04/GettyImages-1145794687.jpg"
+                                alt="expertise picture">
+                            <div class="rateExpertise">⭐️4.2</div>
+                        </div>
+                    </div>
+                    <div class="boxExpertiseCard">
+                        <p class="textExpertiseCard">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Blanditiis, cum. Iusto sapiente ullam quasi laudantium rem alias quos corporis rerum!</p>
+                        <h4 class="authorExpertiseText">-Tru Vio</h4>
+                        <h5 class="logoExpertiseText">Happy Trello</h5>
+                        <div class="boxExpertisePicture">
+                            <img class="expertisePicture"
+                                src="https://media.wired.com/photos/593261cab8eb31692072f129/master/pass/85120553.jpg"
+                                alt="expertise picture">
+                            <div class="rateExpertise">⭐️4.4</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="boxExpertiseButton">
+                    <button class="btnExpertiseCard"><i class="fas fa-arrow-left"></i></button>
+                    <button class="btnExpertiseCard"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+        <section class="container sectionRegister">
+            <img class="registerPicture"
+                src="http://store-images.s-microsoft.com/image/apps.47636.13819498107583324.fb06b53a-4974-4acb-85e6-f6f363f85ab6.edec48d0-ec35-4a1f-8bf5-c455987b4a1e"
+                alt="register picture">
+            <div class="boxRegister">
+                <h2 class="textRegister">Don't Miss The 50% Discount If You register Today</h2>
+                <button class="btnRegister">Register Today</button>
+            </div>
+        </section>
+        <section class="container sectionChangeColors">
+            <div class="boxChangeElements">
+                <h2 class="tittleChange">Change Color Page</h2>
+                <div class="boxColorsElements">
+                    <div class="boxColor">
+                        <div class="color bright"></div>
+                        <p class="textColor">FFFFFF</p>
+                    </div>
+                    <div class="boxColor">
+                        <div class="color dark"></div>
+                        <p class="textColor">000000</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container boxFooterElements">
+            <div class="boxFooterText">
+                <h4 class="footerText">&copy 2022 Treloo LLC - All right reserved</h4>
+            </div>
+            <div class="boxFooterNavigation">
+                <a href="#" class="footerLink">Review</a>
+                <a href="#" class="footerLink">Tips</a>
+                <a href="#" class="footerLink">Alerts</a>
+                <a href="#" class="footerLink">Blog</a>
+            </div>
+        </div>
+    </footer>
+    <script src="./javascript/script.js"></script>
+</body>
+
+</html>

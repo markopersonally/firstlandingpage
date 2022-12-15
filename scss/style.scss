@@ -1,0 +1,25 @@
+@import './variables';
+@import './reset';
+@import './fonts';
+@import './navigationPanel';
+@import './sectionHero';
+@import './sectionSearch';
+@import './popupSearch';
+@import './sectionOffers';
+@import './sectionTravel';
+@import './sectionDestination';
+@import './sectionExpertise';
+@import './sectionRegister';
+@import './sectionChangeColors';
+@import './footer';
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background-color: $bodyBg;
+}
+
+.container {
+	max-width: 1400px;
+	width: 100%;
+	margin: 0 auto;
+}

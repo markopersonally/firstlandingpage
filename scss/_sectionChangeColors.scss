@@ -1,0 +1,66 @@
+.sectionChangeColors {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.boxChangeElements {
+		width: 350px;
+		margin-bottom: 150px;
+		padding: 30px;
+		border: 3px dashed $dark;
+		border-radius: 20px;
+		background-color: $blueShadow;
+	}
+	.tittleChange {
+		margin-bottom: 20px;
+		font-size: 30px;
+		text-align: center;
+	}
+	.boxColorsElements {
+		display: flex;
+		gap: 20px;
+	}
+	.boxColor {
+		width: 200px;
+		height: 250px;
+		line-height: 2.5;
+		border-radius: 20px;
+		text-align: center;
+	}
+	.color {
+		padding: 10px;
+		position: relative;
+		left: 50%;
+		transform: translate(-50%);
+		width: 70px;
+		height: 150px;
+		background-color: $white;
+		box-shadow: 5px 4px 10px $dark;
+		border-radius: 20px;
+		cursor: pointer;
+	}
+	.color:hover {
+		box-shadow: none;
+		border: 2px solid $green;
+	}
+	.bright {
+		background-color: $white;
+	}
+	.dark {
+		background-color: $dark;
+	}
+	.textColor {
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 600px) {
+	.boxChangeElements {
+		margin: auto;
+	}
+	.boxColorsElements {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		align-items: center;
+	}
+}

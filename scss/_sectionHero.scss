@@ -1,0 +1,49 @@
+.sectionHero {
+	height: 100vh;
+	.heroImg,
+	.heroShadow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		width: 100%;
+		z-index: -5;
+	}
+	.heroShadow {
+		background-color: $shadowScript;
+	}
+	.heroText {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: $white;
+		font-size: $heroText;
+		text-align: center;
+		line-height: 1.5;
+	}
+}
+
+@media (max-width: 968px) {
+	.sectionHero {
+		.heroText {
+			font-size: 30px;
+		}
+	}
+}
+
+@media (max-width: 698px) {
+	.sectionHero {
+		.heroText {
+			font-size: 20px;
+		}
+	}
+}
+
+@media (max-height: 698px) {
+	.sectionHero {
+		.heroText {
+			font-size: 25px;
+		}
+	}
+}

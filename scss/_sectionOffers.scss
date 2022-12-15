@@ -1,0 +1,154 @@
+.sectionOffers {
+	position: relative;
+	text-align: center;
+	bottom: 200px;
+}
+.containerTabsOffers {
+	padding: 50px;
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+}
+.boxTabsOffers {
+	background-color: $white;
+	list-style: none;
+	padding: 0px 40px;
+	display: flex;
+	gap: 50px;
+	border-radius: 20px;
+}
+.offerLink {
+	font-weight: bold;
+	color: $offerLink;
+	padding: 15px;
+	font-size: 20px;
+	transition: color 0.5s, background-color 0.5s;
+}
+.offerLink:hover {
+	color: $white;
+	background-color: $blue;
+	border-radius: 5px;
+}
+.boxContainerCards {
+	display: flex;
+	gap: 45px;
+}
+.boxCard {
+	position: relative;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	flex: 2;
+	background-color: $white;
+	border-radius: 20px;
+}
+.boxTopCard {
+	height: 75%;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+.picutre {
+	height: 100%;
+	width: 80%;
+	border-radius: 30px;
+	transition: transform 0.5s;
+	object-fit: cover;
+}
+.picutre:hover {
+	transform: scale(0.8);
+}
+.rightTextCard {
+	position: absolute;
+	right: -15%;
+	rotate: 90deg;
+	color: $offerLink;
+	font-size: 30px;
+	letter-spacing: 5px;
+}
+.boxDownCard {
+	font-size: 20px;
+	text-align: start;
+}
+.dayTextCard {
+	font-size: 15px;
+}
+.colorTextCard {
+	padding: 0 10px;
+	background-color: $grey;
+	color: $pink;
+	font-weight: 300;
+	border-radius: 10px;
+	cursor: pointer;
+}
+.cityTextCard {
+	font-size: 20px;
+	padding: 10px 0;
+}
+.boxPriceCard {
+	display: flex;
+	justify-content: space-between;
+	color: $offerLink;
+}
+.colorPriceCard {
+	font-size: 15px;
+	font-weight: 300;
+}
+.priceBtn {
+	padding: 1px 10px;
+	background-color: $grey;
+	color: $blue;
+	font-weight: bold;
+	font-size: 14px;
+	border-radius: 5px;
+}
+
+@media (max-width: 1350px) {
+	.rightTextCard {
+		font-size: 18px;
+		right: -7%;
+	}
+}
+
+@media (max-width: 1250px) {
+	.boxContainerCards {
+		flex-wrap: wrap;
+	}
+}
+
+@media (max-width: 1150px) {
+	.rightTextCard {
+		font-size: 15px;
+		right: -9%;
+	}
+}
+
+@media (max-width: 968px) {
+	.rightTextCard {
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 830px) {
+	.rightTextCard {
+		right: -2%;
+		letter-spacing: 0;
+	}
+}
+
+@media (max-width: 600px) {
+	.boxContainerCards {
+		flex: 1;
+		flex-direction: column;
+		align-items: center;
+	}
+	.rightTextCard {
+		font-size: 20px;
+		right: 0;
+		letter-spacing: 2px;
+	}
+	.boxTabsOffers {
+		gap: 5px;
+	}
+}

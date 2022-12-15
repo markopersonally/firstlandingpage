@@ -1,0 +1,89 @@
+.sectionTravel {
+	.travel {
+		margin-bottom: 100px;
+		display: flex;
+		gap: 20px;
+		justify-content: space-around;
+	}
+	.boxTravelImg {
+		position: relative;
+		height: 500px;
+	}
+	.boxTravelPicture {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		border-radius: 45px;
+	}
+	.boxTravelStyle {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 70px;
+		width: 150px;
+		font-size: 15px;
+		background-color: $white;
+		border-radius: 20px;
+		box-shadow: 0 0 10px $white;
+	}
+	.boxTravelText1 {
+		bottom: 10%;
+		left: 2%;
+	}
+	.boxTravelText2 {
+		top: 5%;
+		right: 4%;
+	}
+	.boxTravelText3 {
+		bottom: 2%;
+		right: 5%;
+	}
+	.boxTextUp {
+		color: $blue;
+		font-size: 20px;
+	}
+	.boxTextDown {
+		color: $grey;
+		font-size: 15px;
+	}
+	.containerTravelText {
+		height: 100%;
+		font-size: 25px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+	.buttonTravelText {
+		width: 150px;
+		padding: 25px;
+		font-size: 20px;
+		color: $white;
+		background-color: $blue;
+		border-radius: 20px;
+	}
+	.buttonTravelText:hover {
+		box-shadow: 2px 2px $dark;
+	}
+}
+
+@media (max-width: 1350px) {
+	.travelTextUpper,
+	.travelTextDown {
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 968px) {
+	.travel {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+@media (max-width: 500px) {
+	.boxTravelPicture {
+		height: 50%;
+	}
+}

@@ -1,0 +1,137 @@
+.overlayMenHamburger {
+	display: none;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background-color: $shadowScript;
+	backdrop-filter: blur(5px);
+	z-index: 1;
+	.navMobilePanel {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 30px;
+		flex-direction: column;
+	}
+	.navMobileLink {
+		width: 25%;
+		padding: 15px;
+		background-color: $shadowScript;
+		list-style: none;
+		border-radius: 20px;
+		text-align: center;
+		border: 2px solid $blue;
+		transition: background-color 0.5s;
+		cursor: pointer;
+	}
+	.navMobileLink:hover {
+		background-color: $blue;
+	}
+	.navMobileText {
+		font-weight: lighter;
+		font-size: 35px;
+		color: $white;
+	}
+}
+
+.navigationPanel {
+	padding-top: 35px;
+	display: flex;
+	justify-content: space-between;
+	letter-spacing: 1.5px;
+	.logoPanel {
+		width: 50px;
+		height: 50px;
+		display: flex;
+		gap: 30px;
+		.logoImg {
+			border-radius: 25px;
+		}
+		.logoImg:hover {
+			cursor: pointer;
+		}
+		.logoText {
+			font-size: 50px;
+			color: $white;
+			font-weight: bold;
+			transition: color 0.5s;
+			cursor: default;
+		}
+	}
+	.navigation {
+		display: flex;
+		align-items: center;
+		gap: 30px;
+		.navPanel {
+			padding: 10px;
+			display: flex;
+			gap: 30px;
+			list-style: none;
+		}
+		.navText {
+			font-size: $navLinkSize;
+			color: $white;
+			transition: color 0.5s;
+		}
+		.navText:hover {
+			color: $blue;
+		}
+		.blogBtn {
+			padding: 20px 40px;
+			font-weight: bold;
+			font-size: $normalSize;
+			color: $blue;
+			border-radius: 15px;
+			letter-spacing: 1px;
+			transition: color 0.5s, background-color 0.5s;
+		}
+		.blogBtn:hover {
+			background-color: $blue;
+			color: $white;
+		}
+	}
+	.menHamburger {
+		display: none;
+		margin-right: 20px;
+		background-color: transparent;
+		color: $white;
+		font-size: 60px;
+		cursor: pointer;
+		z-index: 2;
+		transition: transform 0.5s;
+	}
+	.menHamburger:hover {
+		transform: rotate(-56deg);
+	}
+}
+
+@media (max-width: 968px) {
+	.navigationPanel {
+		.navigation {
+			display: none;
+		}
+		.menHamburger {
+			display: block;
+		}
+	}
+}
+
+@media (max-width: 698px) {
+	.overlayMenHamburger {
+		.navMobileText {
+			font-size: 25px;
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.overlayMenHamburger {
+		.navMobileLink {
+			justify-content: start;
+		}
+		.navMobileText {
+			font-size: 18px;
+		}
+	}
+}

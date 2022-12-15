@@ -1,0 +1,12 @@
+.fontXXLDark {
+	font-size: $XXLSize;
+	color: $dark;
+	letter-spacing: 0.5px;
+	font-weight: bold;
+}
+
+@media (max-width:1250px) {
+	.fontXXLDark {
+		font-size: 30px;
+	}
+}

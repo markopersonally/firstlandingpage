@@ -1,0 +1,113 @@
+.boxPopup {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 999;
+	.popupSearch {
+		width: 900px;
+		height: 600px;
+		border: 4px solid $dark;
+		border-radius: 20px;
+		background-color: $grey;
+	}
+	.popupHeading {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 15%;
+		border-bottom: 4px solid $popupHeading;
+	}
+	.closeButton {
+		margin: 10px;
+		position: absolute;
+		top: 5px;
+		right: 20px;
+		background-color: transparent;
+		border: none;
+		font-size: 55px;
+		transition: transform 0.5s;
+		cursor: pointer;
+	}
+	.closeButton:hover {
+		color: $closeButton;
+	}
+	.popupBody {
+		height: 500px;
+		padding: 15px;
+		gap: 10px;
+		display: flex;
+		justify-content: space-evenly;
+		font-size: 20px;
+		.popupTittle {
+			border-bottom: 1px solid $dark;
+		}
+	}
+	.popupBoxCities,
+	.popupBoxDates {
+		width: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 30px;
+		font-size: 25px;
+	}
+}
+
+.overlayPopup {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: $shadowScript;
+	backdrop-filter: blur(5px);
+	z-index: 990;
+}
+
+@media (max-width: 996px) {
+	.boxPopup {
+		.fontXXLDark {
+			font-size: 25px;
+		}
+		.popupSearch {
+			width: 600px;
+		}
+		.popupBody {
+			align-items: center;
+			flex-direction: column;
+		}
+	}
+}
+
+@media (max-width: 696px) {
+	.boxPopup {
+		.popupSearch {
+			width: 500px;
+		}
+	}
+}
+
+@media (max-width: 526px) {
+	.boxPopup {
+		.popupSearch {
+			width: 400px;
+		}
+	}
+}
+
+@media (max-width: 421px) {
+	.boxPopup {
+		.fontXXLDark {
+			font-size: 20px;
+		}
+		.popupSearch {
+			width: 300px;
+		}
+		.closeButton {
+			top: 2px;
+			right: 10px;
+		}
+	}
+}

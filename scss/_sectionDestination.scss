@@ -1,0 +1,104 @@
+.sectionDestination {
+	.destination {
+		margin-bottom: 250px;
+	}
+	.fontXXLDark {
+		text-align: center;
+	}
+	.containerTabsDestination {
+		margin: 30px;
+		display: flex;
+		justify-content: center;
+		gap: 30px;
+	}
+	.boxTabsDestination {
+		padding: 10px 50px;
+		display: flex;
+		gap: 50px;
+		list-style: none;
+		background-color: $white;
+		border-radius: 20px;
+		transition: transform 0.3s;
+	}
+	.destinationLink {
+		font-weight: bold;
+		color: $brown;
+		font-size: 20px;
+		transition: color 0.5s, background-color 0.5s;
+	}
+	.destinationLink:hover {
+		color: $white;
+		background-color: $blue;
+		border-radius: 5px;
+	}
+	.boxCardsDestination {
+		display: grid;
+		gap: 30px;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+	.boxDestinationCard {
+		height: 300px;
+		background-color: $white;
+		padding: 10px;
+		border-radius: 20px;
+		transition: transform 0.3s;
+	}
+	.boxDestinationCard:hover {
+		transform: scale(0.95);
+	}
+	.boxTopCard {
+		height: 80%;
+		width: 100%;
+		position: relative;
+	}
+	.picutreDestination {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		border-radius: 20px;
+	}
+	.rateCard {
+		display: flex;
+		padding: 1px 10px;
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		font-size: 12px;
+		letter-spacing: 1px;
+		background-color: $white;
+		border-radius: 20px;
+	}
+	.boxDownCard {
+		margin: 10px;
+		letter-spacing: 1px;
+	}
+	.country {
+		font-size: 20px;
+	}
+	.city {
+		font-size: 12px;
+		color: $brown;
+	}
+}
+
+@media (max-width: 600px) {
+	.sectionDestination {
+		.boxTabsDestination {
+			gap: 5px;
+		}
+		.boxCardsDestination {
+			display: block;
+		}
+		.boxDestinationCard {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+@media (max-width: 1150px) {
+	.sectionDestination {
+		.boxCardsDestination {
+			grid-template-columns: 2fr 2fr;
+		}
+	}
+}

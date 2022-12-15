@@ -1,0 +1,42 @@
+.boxFooterElements {
+	display: flex;
+	justify-content: space-around;
+	font-size: 25px;
+	letter-spacing: 0.5px;
+	.boxFooterText {
+		color: $grey2;
+		cursor: default;
+	}
+	.boxFooterNavigation {
+		display: flex;
+		gap: 50px;
+	}
+	.footerLink {
+		font-weight: bold;
+		color: $dark;
+		transition: color 0.5s;
+	}
+	.footerLink:hover {
+		color: $blue;
+	}
+}
+
+@media (max-width: 1024px) {
+	.boxFooterElements {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+@media (max-width: 600px) {
+	.boxFooterElements {
+		.boxFooterNavigation {
+			flex-direction: column;
+			align-items: center;
+			gap: 10px;
+		}
+		.boxFooterText {
+			text-align: center;
+		}
+	}
+}
