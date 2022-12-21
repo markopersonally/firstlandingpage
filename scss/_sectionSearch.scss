@@ -161,8 +161,22 @@
 
 @media (max-width: 520px) {
 	.sectionSearch {
-		.boxSearchDetails {
-			align-items: flex-start;
+		.containerTabs {
+			padding-top: 5px;
+			border-radius: 0;
+			width: 100%;
+		}
+		.boxSerchElements {
+			border-radius: 0;
+			position: relative;
+		}
+		.boxSelect {
+			transform: translateX(-20%);
+		}
+		.boxSearchIcon {
+			.fas {
+				transform: translateX(-20%);
+			}
 		}
 	}
 }

@@ -17,51 +17,26 @@ overlayMenHamburger.addEventListener('click', () => {
 });
 
 menHamburger.addEventListener('click', openMenHamburger);
-
 // popup function
-const flightList = [
-	{
-		id: 1,
-		cityFrom: 'portugal',
-		cityTo: 'finland',
-		flyTime: 5,
-	},
-	{
-		id: 2,
-		cityFrom: 'portugal',
-		cityTo: 'italy',
-		flyTime: 5,
-	},
-	{
-		id: 3,
-		cityFrom: 'italy',
-		cityTo: 'portugal',
-		flyTime: 5,
-	},
-	{
-		id: 4,
-		cityFrom: 'italy',
-		cityTo: 'finland',
-		flyTime: 5,
-	},
-	{
-		id: 5,
-		cityFrom: 'finland',
-		cityTo: 'portugal',
-		flyTime: 3,
-	},
-	{
-		id: 6,
-		cityFrom: 'finland',
-		cityTo: 'italy',
-		flyTime: 5,
-	},
-];
-
 const selectCityFrom = document.querySelector('#selectCityFrom');
 const selectCityTo = document.querySelector('#selectCityTo');
 const boxPopup = document.querySelector('.boxPopup');
 const overlayPopup = document.querySelector('.overlayPopup');
+const popup = document.querySelector('.popupSearch');
+const closeButton = document.querySelector('.closeButton');
+const buttonSearch = document.querySelector('.buttonSearch');
+const boxSearchText = document.querySelector('.boxSearchText');
+const inputDateFrom = document.querySelector('#inputDateFrom');
+const inputDateTo = document.querySelector('#inputDateTo');
+const cityFrom = document.querySelector('#cityFrom');
+const cityTo = document.querySelector('#cityTo');
+const dateFrom = document.querySelector('#dateFrom');
+const dateTo = document.querySelector('#dateTo');
+const flyTime = document.querySelector('#flyTime');
+const errorSelectCityFrom = document.querySelector('#errorSelectCityFrom');
+const errorSelectCityTo = document.querySelector('#errorSelectCityTo');
+const errorInputDateFrom = document.querySelector('#errorInputDateFrom');
+const errorInputDateTo = document.querySelector('#errorInputDateTo');
 
 const generateFlyTime = () => {
 	const result = data.find(
@@ -81,21 +56,6 @@ closeButton.addEventListener('click', closePopup);
 overlayPopup.addEventListener('click', closePopup);
 
 // btn open popup
-const popup = document.querySelector('.popupSearch');
-const closeButton = document.querySelector('.closeButton');
-const buttonSearch = document.querySelector('.buttonSearch');
-const boxSearchText = document.querySelector('.boxSearchText');
-const inputDateFrom = document.querySelector('#inputDateFrom');
-const inputDateTo = document.querySelector('#inputDateTo');
-const cityFrom = document.querySelector('#cityFrom');
-const cityTo = document.querySelector('#cityTo');
-const dateFrom = document.querySelector('#dateFrom');
-const dateTo = document.querySelector('#dateTo');
-const flyTime = document.querySelector('#flyTime');
-const errorSelectCityFrom = document.querySelector('#errorSelectCityFrom');
-const errorSelectCityTo = document.querySelector('#errorSelectCityTo');
-const errorInputDateFrom = document.querySelector('#errorInputDateFrom');
-const errorInputDateTo = document.querySelector('#errorInputDateTo');
 
 const openPopup = () => {
 	boxPopup.style.display = 'block';
@@ -104,8 +64,24 @@ const openPopup = () => {
 	cityTo.innerHTML = selectCityTo.value;
 	dateFrom.innerHTML = inputDateFrom.value;
 	dateTo.innerHTML = inputDateTo.value;
-	if (selectCityFrom.value === 'dubai' && selectCityTo.value === 'portugal') {
-		flyTime.innerHTML = 5;
+
+	if (selectCityFrom.value === 'portugal' && selectCityTo.value === 'italy') {
+		flyTime.innerHTML = '5 hours';
+	}
+	if (selectCityFrom.value === 'portugal' && selectCityTo.value === 'finland') {
+		flyTime.innerHTML = '3 hours';
+	}
+	if (selectCityFrom.value === 'italy' && selectCityTo.value === 'portugal') {
+		flyTime.innerHTML = '7 hours';
+	}
+	if (selectCityFrom.value === 'italy' && selectCityTo.value === 'finland') {
+		flyTime.innerHTML = '10 hours';
+	}
+	if (selectCityFrom.value === 'finland' && selectCityTo.value === 'portugal') {
+		flyTime.innerHTML = '8 hours';
+	}
+	if (selectCityFrom.value === 'finland' && selectCityTo.value === 'italy') {
+		flyTime.innerHTML = '9 hours';
 	}
 	flyTime.innerHTML = generateFlyTime().flyTime;
 };

@@ -233,6 +233,9 @@ table {
   .overlayMenHamburger .navMobileText {
     font-size: 18px;
   }
+  .navigationPanel .logoText {
+    display: none;
+  }
 }
 
 .sectionHero {
@@ -277,9 +280,9 @@ table {
   }
 }
 
-@media (max-height: 698px) {
+@media (max-height: 500px) {
   .sectionHero .heroText {
-    font-size: 25px;
+    font-size: 15px;
   }
 }
 
@@ -509,10 +512,22 @@ table {
 }
 
 @media (max-width: 520px) {
-  .sectionSearch .boxSearchDetails {
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+  .sectionSearch .containerTabs {
+    padding-top: 5px;
+    border-radius: 0;
+    width: 100%;
+  }
+  .sectionSearch .boxSerchElements {
+    border-radius: 0;
+    position: relative;
+  }
+  .sectionSearch .boxSelect {
+    -webkit-transform: translateX(-20%);
+            transform: translateX(-20%);
+  }
+  .sectionSearch .boxSearchIcon .fas {
+    -webkit-transform: translateX(-20%);
+            transform: translateX(-20%);
   }
 }
 
